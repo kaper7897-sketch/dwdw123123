@@ -1,0 +1,404 @@
+
+.premium-hero {
+    background: linear-gradient(135deg, #D4AF37, #BF953F);
+    color: white;
+    padding: 8rem 0 4rem;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.luxury-resorts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.luxury-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.luxury-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.luxury-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #D4AF37;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.luxury-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--light-gray);
+}
+
+.luxury-content {
+    padding: 2rem;
+}
+
+.luxury-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+.luxury-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.price-tag {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #D4AF37;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.vip-services {
+    background: var(--light-gray);
+    padding: 4rem 0;
+}
+
+.services-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.service-text h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+}
+
+.service-text p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.gold-button {
+    background: linear-gradient(135deg, #D4AF37, #BF953F);
+    color: white;
+    border: none;
+}
+
+.gold-button:hover {
+    background: linear-gradient(135deg, #BF953F, #D4AF37);
+    transform: translateY(-2px);
+}
+
+.premium-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(0,0,0,0.9) 80%);
+    backdrop-filter: blur(15px);
+}
+
+.premium-modal-content {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    margin: 3% auto;
+    padding: 0;
+    border-radius: 30px;
+    width: 85%;
+    max-width: 700px;
+    position: relative;
+    animation: premiumEntrance 1s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 
+        0 0 0 1px rgba(212, 175, 55, 0.3),
+        0 30px 100px rgba(212, 175, 55, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    overflow: hidden;
+}
+
+.premium-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    animation: goldShine 3s infinite;
+}
+
+.premium-modal-header {
+    background: linear-gradient(135deg, #D4AF37 0%, #BF953F 30%, #AA771C 100%);
+    color: white;
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-modal-header::after {
+    content: '⭐';
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+.premium-modal-header h3 {
+    color: white;
+    margin: 0 0 1rem 0;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.premium-modal-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0.5rem 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+.premium-modal-subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.premium-modal-body {
+    padding: 3rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+}
+
+.premium-form-modal .form-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.premium-form-modal label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #D4AF37;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.premium-form-modal input,
+.premium-form-modal select,
+.premium-form-modal textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(10px);
+}
+
+.premium-form-modal input:focus,
+.premium-form-modal select:focus,
+.premium-form-modal textarea:focus {
+    border-color: #D4AF37;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+.premium-form-modal input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.premium-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.premium-modal-close:hover {
+    background: rgba(255,255,255,0.1);
+    transform: rotate(90deg);
+}
+
+.luxury-btn {
+    background: linear-gradient(135deg, #D4AF37, #BF953F);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.luxury-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.luxury-btn:hover::before {
+    left: 100%;
+}
+
+.luxury-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+}
+
+@keyframes premiumEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.8) rotateX(45deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0);
+    }
+}
+
+@keyframes goldShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.premium-success {
+    text-align: center;
+    padding: 4rem 2rem;
+    display: none;
+}
+
+.premium-success-icon {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    animation: bounce 1s;
+}
+
+.premium-success h3 {
+    color: #D4AF37;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.premium-success p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+@media (max-width: 768px) {
+    .premium-modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+    
+    .premium-modal-header {
+        padding: 2.5rem 1.5rem 2rem;
+    }
+    
+    .premium-modal-header h3 {
+        font-size: 1.8rem;
+    }
+    
+    .premium-modal-body {
+        padding: 2rem 1.5rem;
+    }
+}
