@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиум отдых</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .premium-modal-content {
+            background: #1a1a1a;
+            margin: 20px;
+            padding: 0;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            border: 1px solid #D4AF37;
+        }
+
+        .premium-modal-header {
+            background: #D4AF37;
+            color: white;
+            padding: 30px 20px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .premium-modal-header h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .premium-modal-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .premium-modal-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .premium-modal-header::after {
+            content: '⭐';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+        }
+
+        .premium-modal-body {
+            padding: 30px 25px;
+            background: #1a1a1a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #D4AF37;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #D4AF37;
+            background: rgba(255,255,255,0.1);
+            outline: none;
+        }
+
+        input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .luxury-btn {
+            background: #D4AF37;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .luxury-btn:hover {
+            background: #BF953F;
+        }
+
+        .premium-success {
+            text-align: center;
+            padding: 30px 20px;
+            display: none;
+        }
+
+        .premium-success-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .premium-success h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .premium-success p {
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="premium-modal-content">
+        <div class="premium-modal-header">
+            <h3>Эксклюзивное предложение</h3>
+            <div class="premium-modal-price">от 450 000 ₽</div>
+            <div class="premium-modal-subtitle">Four Seasons Resort Maldives</div>
+        </div>
+        <div class="premium-modal-body">
+            <div id="premiumBookingForm">
+                <form class="premium-form-modal">
+                    <div class="form-group">
+                        <label for="premiumModalName">Ваше имя</label>
+                        <input type="text" id="premiumModalName" required placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="premiumModalPhone">Контактный телефон</label>
+                        <input type="tel" id="premiumModalPhone" required placeholder="Ваш номер телефона">
+                    </div>
+                    <div class="form-group">
+                        <label for="premiumModalEmail">Электронная почта</label>
+                        <input type="email" id="premiumModalEmail" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="premiumModalWishes">Особые пожелания</label>
+                        <textarea id="premiumModalWishes" rows="3" placeholder="VIP услуги, диетические предпочтения, особые даты..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="luxury-btn">
+                        🎯 Забронировать люкс
+                    </button>
+                </form>
+            </div>
+            
+            <div id="premiumSuccess" class="premium-success">
+                <div class="premium-success-icon">✨</div>
+                <h3>Ваша заявка принята!</h3>
+                <p>Персональный консультант свяжется с вами в течение 15 минут для обсуждения деталей вашего эксклюзивного путешествия.</p>
+                <button class="luxury-btn" onclick="resetForm()">
+                    Прекрасно!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.premium-form-modal').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('premiumBookingForm').style.display = 'none';
+            document.getElementById('premiumSuccess').style.display = 'block';
+        });
+        
+        function resetForm() {
+            document.getElementById('premiumBookingForm').style.display = 'block';
+            document.getElementById('premiumSuccess').style.display = 'none';
+            document.querySelector('.premium-form-modal').reset();
+        }
+    </script>
+</body>
+</html>
